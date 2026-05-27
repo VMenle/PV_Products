@@ -1,46 +1,42 @@
 [
   {
     "id": 1,
-    "titel": "Aiko 465W – Balkonkraftwerk 800W",
-    "wechselrichter": "Growatt NEO 800M-X",
-    "preis": 269,
-    "preis_text": "269,00 €",
-    "beschreibung": "Komplettset mit 2 Solarmodulen (Aiko 465W)",
-    "verfuegbarkeit": "✅ Verfügbar",
-    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
-    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+    "titel": "Suntech 440W</span> bifazial full black <span style=\"font-size: 19px;\">(Gesamtleistung 880Wp + bifazial Faktor)</span></span></p> – Balkonkraftwerk 800W",
+    "wechselrichter": "Growatt",
+    "preis": 311,
+    "preis_text": "311,00 €",
+    "verfuegbarkeit": "✅ Verfügbar"
   },
   {
     "id": 2,
-    "titel": "Trina – Balkonkraftwerk 800W",
-    "wechselrichter": "Growatt NEO 800M-X",
-    "preis": 279,
-    "preis_text": "279,00 €",
-    "beschreibung": "Komplettset mit 2 Solarmodulen (Trina)",
-    "verfuegbarkeit": "✅ Verfügbar",
-    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
-    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+    "titel": "Aiko 465W </span>bifazial <span style=\"font-size: 19px;\">(Gesamtleistung 930Wp + bifazial Faktor + Teilverschattungsoptimierung)</span></span></p> – Balkonkraftwerk 800W",
+    "wechselrichter": "Growatt",
+    "preis": 323,
+    "preis_text": "323,00 €",
+    "verfuegbarkeit": "✅ Verfügbar"
   },
   {
     "id": 3,
-    "titel": "Premium Solarmodulen Aiko 500W bifazial full black (Gesamtleistung 1000Wp + bifazial Faktor + Teilverschattungsoptimierung) – Balkonkraftwerk 800W",
-    "wechselrichter": "Growatt NEO 800M-X",
-    "preis": 279,
-    "preis_text": "279,00 €",
-    "beschreibung": "Komplettset mit 2 Solarmodulen (Premium Solarmodulen Aiko 500W bifazial full black (Gesamtleistung 1000Wp + bifazial Faktor + Teilverschattungsoptimierung))",
-    "verfuegbarkeit": "✅ Verfügbar",
-    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
-    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+    "titel": "Trina</span> Solar 450W full black <span style=\"font-size: 19px;\">(Gesamtleistung 900Wp + bifazial Faktor)</span></span></p> – Balkonkraftwerk 800W",
+    "wechselrichter": "Growatt",
+    "preis": 323,
+    "preis_text": "323,00 €",
+    "verfuegbarkeit": "✅ Verfügbar"
   },
   {
     "id": 4,
-    "titel": "Solarmodulen Ja Solar 505W bifazial full black (Gesamtleistung 1010Wp + bifazial Faktor) – Balkonkraftwerk 800W",
-    "wechselrichter": "Growatt NEO 800M-X",
-    "preis": 329,
-    "preis_text": "329,00 €",
-    "beschreibung": "Komplettset mit 2 Solarmodulen (Solarmodulen Ja Solar 505W bifazial full black (Gesamtleistung 1010Wp + bifazial Faktor))",
-    "verfuegbarkeit": "✅ Verfügbar",
-    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
-    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+    "titel": "Premium Solarmodulen Aiko 500W bifazial full black (Gesamtleistung 1000Wp + bifazial Faktor + Teilverschattungsoptimierung)</span></p> – Balkonkraftwerk 800W",
+    "wechselrichter": "Growatt",
+    "preis": 383,
+    "preis_text": "383,00 €",
+    "verfuegbarkeit": "✅ Verfügbar"
+  },
+  {
+    "id": 5,
+    "titel": "Solarmodulen Ja Solar 505W bifazial full black (Gesamtleistung 1010Wp + bifazial Faktor)</span></p> – Balkonkraftwerk 800W",
+    "wechselrichter": "Growatt",
+    "preis": 383,
+    "preis_text": "383,00 €",
+    "verfuegbarkeit": "✅ Verfügbar"
   }
 ]
