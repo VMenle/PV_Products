@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "titel": "Suntech 440Wb – Balkonkraftwerk 800W",
+    "leistung": "unbekannt",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 239,
+    "preis_text": "239,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Suntech 440Wb), inkl. Wechselrichter, WLAN-Überwachung, 5m AC-Kabel.",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Balkonkraftwerk",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+  },
+  {
+    "id": 2,
+    "titel": "Aiko 465W b – Balkonkraftwerk 800W",
+    "leistung": "unbekannt",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 239,
+    "preis_text": "239,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Aiko 465W b), inkl. Wechselrichter, WLAN-Überwachung, 5m AC-Kabel.",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Balkonkraftwerk",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+  },
+  {
+    "id": 3,
+    "titel": "TrinaS – Balkonkraftwerk 800W",
+    "leistung": "unbekannt",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 249,
+    "preis_text": "249,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (TrinaS), inkl. Wechselrichter, WLAN-Überwachung, 5m AC-Kabel.",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Balkonkraftwerk",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+  }
+]
