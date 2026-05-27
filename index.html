@@ -13,37 +13,68 @@
         body {
             font-family: 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(145deg, #f5f9ff 0%, #eef2f8 100%);
-            padding: 2rem 1.5rem;
+            padding-top: 100px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-bottom: 2rem;
             min-height: 100vh;
         }
-        .container {
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            z-index: 100;
+            padding: 0.8rem 1.5rem;
+        }
+        .header-content {
             max-width: 1400px;
             margin: 0 auto;
-        }
-        .header {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 2rem;
-            background: rgba(255,255,255,0.85);
-            backdrop-filter: blur(8px);
-            padding: 1rem 2rem;
-            border-radius: 60px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
         h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #1a4d2e, #2d7a4b);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
         }
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .home-link {
+            background: #1a4d2e;
+            color: white;
+            text-decoration: none;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .home-link:hover {
+            background: #0f3a22;
+        }
         .update-info {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #4a5b6e;
+            background: #f0f4f8;
+            padding: 0.3rem 0.8rem;
+            border-radius: 40px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
         .products-grid {
             display: grid;
@@ -204,6 +235,7 @@
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
+            flex-direction: column;
         }
         .send-btn {
             background: #1a4d2e;
@@ -225,6 +257,21 @@
             cursor: pointer;
             flex: 1;
         }
+        .modal-home-link {
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ecf3fa;
+        }
+        .modal-home-link a {
+            color: #1a4d2e;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .modal-home-link a:hover {
+            text-decoration: underline;
+        }
         footer {
             text-align: center;
             margin-top: 3rem;
@@ -233,18 +280,24 @@
             font-size: 0.8rem;
         }
         @media (max-width: 700px) {
-            body { padding: 1rem; }
-            .header { flex-direction: column; text-align: center; }
+            body { padding-top: 120px; padding-left: 1rem; padding-right: 1rem; }
+            .header-content { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1>☀️ Energy & Leisure – Balkonkraftwerke 800W</h1>
-        <div class="update-info">🔄 Tägliche Angebote | 📦 Komplettsets mit Growatt</div>
-    </div>
 
+<div class="fixed-header">
+    <div class="header-content">
+        <h1>☀️ Energy & Leisure – Balkonkraftwerke 800W</h1>
+        <div class="header-buttons">
+            <a href="https://energy-leisure.de" target="_blank" class="home-link">🏠 Energy-Leisure.de</a>
+            <span class="update-info">🔄 Tägliche Angebote | 📦 Komplettsets mit Growatt</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
     <div id="productsContainer" class="products-grid">
         <div class="loading">📡 Lade Angebote ...</div>
     </div>
@@ -280,6 +333,9 @@
         <div class="modal-buttons">
             <button class="send-btn" onclick="sendAnfrage()">📧 Anfrage senden</button>
             <button class="cancel-btn" onclick="closeModal()">Abbrechen</button>
+        </div>
+        <div class="modal-home-link">
+            <a href="https://energy-leisure.de" target="_blank">🏠 Zurück zu Energy-Leisure.de</a>
         </div>
     </div>
 </div>
