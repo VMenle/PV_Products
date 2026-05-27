@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>☀️ Energy & Leisure – Balkonkraftwerke 800W</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(145deg, #f5f9ff 0%, #eef2f8 100%);
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(8px);
+            padding: 1rem 2rem;
+            border-radius: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.9);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1a4d2e, #2d7a4b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .badge {
+            background: #1a4d2e;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Suche & Filter */
+        .search-section {
+            background: white;
+            border-radius: 28px;
+            padding: 1.2rem 1.8rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+            border: 1px solid #e4e9f0;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        #searchInput {
+            flex: 1;
+            padding: 0.9rem 1.2rem;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 48px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        #searchInput:focus {
+            outline: none;
+            border-color: #2d7a4b;
+            box-shadow: 0 0 0 3px rgba(45,122,75,0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.2rem;
+            background: #f1f5f9;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .filter-btn.active {
+            background: #2d7a4b;
+            color: white;
+        }
+
+        .update-info {
+            font-size: 0.8rem;
+            color: #4a5b6e;
+            margin-top: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Karte */
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #f8fafc;
+            border-bottom: 1px solid #eee;
+        }
+
+        .card-content {
+            padding: 1.4rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+            color: #0a2b1f;
+        }
+
+        .leistung {
+            font-size: 0.8rem;
+            color: #2d7a4b;
+            background: #e6f4ea;
+            display: inline-block;
+            padding: 0.2rem 0.7rem;
+            border-radius: 40px;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .beschreibung {
+            color: #334155;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            margin: 0.7rem 0;
+            flex: 1;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin: 1rem 0 0.6rem;
+            border-top: 1px solid #ecf3fa;
+            padding-top: 1rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1a4d2e;
+        }
+
+        .wechselrichter {
+            font-size: 0.8rem;
+            background: #f1f5f9;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        .verfuegbarkeit {
+            color: #2b8c4a;
+            font-weight: 500;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .btn {
+            background: #1a4d2e;
+            color: white;
+            border: none;
+            padding: 0.7rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.6rem;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: #0f3a22;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            font-size: 1.2rem;
+            color: #4a5b6e;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem;
+            color: #6c7a8a;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 1rem; }
+            .header { flex-direction: column; text-align: center; }
+            .products-grid { gap: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>☀️ Energy & Leisure – Balkonkraftwerke 800W</h1>
+        <div class="badge">🔌 Steckerfertig | 🌿 Solarpaket 1</div>
+    </div>
+
+    <div class="search-section">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Suchen nach Modul, Wechselrichter, Leistung ..." autocomplete="off">
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">📦 Alle Produkte</button>
+            <button class="filter-btn" data-filter="Growatt">⚡ Growatt</button>
+            <button class="filter-btn" data-filter="Speicher">🔋 Batteriespeicher</button>
+            <button class="filter-btn" data-filter="bifazial">🔄 Bifazial</button>
+        </div>
+        <div class="update-info">
+            <span>🕒 Letztes Update: <span id="lastUpdate">–</span></span>
+            <span>🔄 Live-Aktualisierung alle 5 Minuten • Daten täglich frisch</span>
+        </div>
+    </div>
+
+    <div id="productsContainer" class="products-grid">
+        <div class="loading">📡 Lade Angebote ...</div>
+    </div>
+    <footer>
+        ⚡ Direktübernahme der Produktdaten • täglicher Abgleich via n8n • Auswahl immer mit Growatt-Wechselrichter
+    </footer>
+</div>
+
+<script>
+    let allProducts = [];
+    let currentFilter = 'all';
+
+    // JSON von GitHub laden (passe den RAW-URL an!)
+    const JSON_URL = 'https://raw.githubusercontent.com/DEIN_USERNAME/DEIN_REPO/main/angebote.json';
+
+    async function loadProducts() {
+        try {
+            const response = await fetch(JSON_URL + '?t=' + Date.now()); // Cache-Bust
+            if (!response.ok) throw new Error('Netzwerkfehler');
+            const data = await response.json();
+            allProducts = data;
+            document.getElementById('lastUpdate').innerText = new Date().toLocaleString('de-DE');
+            renderProducts();
+        } catch (error) {
+            console.error('Fehler beim Laden:', error);
+            document.getElementById('productsContainer').innerHTML = '<div class="no-results">⚠️ Daten konnten nicht geladen werden. Bitte später erneut versuchen.</div>';
+        }
+    }
+
+    function renderProducts() {
+        const container = document.getElementById('productsContainer');
+        let filtered = [...allProducts];
+
+        // Text-Suche
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        if (searchTerm) {
+            filtered = filtered.filter(p =>
+                p.titel?.toLowerCase().includes(searchTerm) ||
+                p.beschreibung?.toLowerCase().includes(searchTerm) ||
+                p.wechselrichter?.toLowerCase().includes(searchTerm) ||
+                p.leistung?.toLowerCase().includes(searchTerm)
+            );
+        }
+
+        // Filter-Buttons
+        if (currentFilter === 'Growatt') {
+            filtered = filtered.filter(p => p.wechselrichter?.toLowerCase().includes('growatt'));
+        } else if (currentFilter === 'Speicher') {
+            filtered = filtered.filter(p => p.titel?.toLowerCase().includes('speicher'));
+        } else if (currentFilter === 'bifazial') {
+            filtered = filtered.filter(p => p.leistung?.toLowerCase().includes('bifazial') || p.beschreibung?.toLowerCase().includes('bifazial'));
+        }
+
+        if (filtered.length === 0) {
+            container.innerHTML = '<div class="no-results">😞 Keine Angebote gefunden. Versuche einen anderen Suchbegriff.</div>';
+            return;
+        }
+
+        container.innerHTML = filtered.map(p => `
+            <div class="product-card">
+                <img class="card-img" src="${p.bild || 'https://via.placeholder.com/400x220?text=Solarmodul'}" 
+                     alt="${p.titel}"
+                     onerror="this.src='https://placehold.co/400x220/e2f0e6/1a4d2e?text=Photovoltaik'">
+                <div class="card-content">
+                    <div class="product-title">${escapeHtml(p.titel)}</div>
+                    <div><span class="leistung">⚡ ${escapeHtml(p.leistung || '800W')}</span></div>
+                    <div class="beschreibung">${escapeHtml(p.beschreibung || 'Keine Beschreibung')}</div>
+                    <div class="price-row">
+                        <span class="price">${escapeHtml(p.preis_text || p.preis + ' €')}</span>
+                        <span class="wechselrichter">🔌 ${escapeHtml(p.wechselrichter || 'Wechselrichter')}</span>
+                    </div>
+                    <div class="verfuegbarkeit">✅ ${escapeHtml(p.verfuegbarkeit || 'Verfügbar')}</div>
+                    <a href="${p.link || '#'}" target="_blank" class="btn">🔍 Zum Angebot →</a>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    // Event Listener
+    document.getElementById('searchInput').addEventListener('input', renderProducts);
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.getAttribute('data-filter');
+            renderProducts();
+        });
+    });
+
+    // Initial laden & alle 5 Minuten aktualisieren (300000 ms)
+    loadProducts();
+    setInterval(loadProducts, 300000);
+</script>
+</body>
+</html>
