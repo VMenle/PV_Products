@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "titel": "Aiko 465W – Balkonkraftwerk 800W",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 269,
+    "preis_text": "269,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Aiko 465W)",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+  },
+  {
+    "id": 2,
+    "titel": "Trina – Balkonkraftwerk 800W",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 279,
+    "preis_text": "279,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Trina)",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+  },
+  {
+    "id": 3,
+    "titel": "Premium Solarmodulen Aiko 500W bifazial full black (Gesamtleistung 1000Wp + bifazial Faktor + Teilverschattungsoptimierung) – Balkonkraftwerk 800W",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 279,
+    "preis_text": "279,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Premium Solarmodulen Aiko 500W bifazial full black (Gesamtleistung 1000Wp + bifazial Faktor + Teilverschattungsoptimierung))",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+  },
+  {
+    "id": 4,
+    "titel": "Solarmodulen Ja Solar 505W bifazial full black (Gesamtleistung 1010Wp + bifazial Faktor) – Balkonkraftwerk 800W",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 329,
+    "preis_text": "329,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Solarmodulen Ja Solar 505W bifazial full black (Gesamtleistung 1010Wp + bifazial Faktor))",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
+  }
+]
