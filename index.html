@@ -142,8 +142,6 @@
             font-size: 1.2rem;
             color: #4a5b6e;
         }
-
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -255,7 +253,6 @@
     </footer>
 </div>
 
-<!-- Modal -->
 <div id="anfrageModal" class="modal">
     <div class="modal-content">
         <h3>📋 Anfrage für Balkonkraftwerk</h3>
@@ -302,36 +299,9 @@
         }
     }
 
-    function renderProducts(produkte) {
-        if (!produkte || produkte.length === 0) {
-            document.getElementById('productsContainer').innerHTML = '<div class="loading">Keine Angebote vorhanden</div>';
-            return;
-        }
-
-        const html = produkte.map(p => `
-            <div class="product-card">
-                <img class="card-img" src="${p.bild || 'https://placehold.co/600x400/1a4d2e/white?text=Solar+Set'}" 
-                     alt="${p.titel}"
-                     onerror="this.src='https://placehold.co/600x400/e2f0e6/1a4d2e?text=Photovoltaik'">
-                <div class="card-content">
-                    <div class="product-title">${escapeHtml(p.titel)}</div>
-                    <div><span class="leistung">⚡ ${escapeHtml(p.leistung || '800W')}</span></div>
-                    <div class="beschreibung">${escapeHtml(p.beschreibung || '')}</div>
-                    <div class="price-row">
-                        <span class="price">${escapeHtml(p.preis_text || p.preis + ' €')}</span>
-                        <span class="wechselrichter">🔌 ${escapeHtml(p.wechselrichter || 'Growatt')}</span>
-                    </div>
-                    <button class="anfrage-btn" onclick='openAnfrage(${JSON.stringify(p)})'>📩 Angebot anfragen</button>
-                </div>
-            </div>
-        `).join('');
-
-        document.getElementById('productsContainer').innerHTML = html;
-    }
-
     function escapeHtml(str) {
         if (!str) return '';
-        return str.replace(/[&<>]/g, function(m) {
+        return String(str).replace(/[&<>]/g, function(m) {
             if (m === '&') return '&amp;';
             if (m === '<') return '&lt;';
             if (m === '>') return '&gt;';
@@ -339,16 +309,55 @@
         });
     }
 
+    function renderProducts(produkte) {
+        if (!produkte || produkte.length === 0) {
+            document.getElementById('productsContainer').innerHTML = '<div class="loading">Keine Angebote vorhanden</div>';
+            return;
+        }
+
+        const html = produkte.map(p => {
+            const titel = p.titel || p.name || 'Balkonkraftwerk';
+            const preisText = p.preis_text || (p.preis ? p.preis.toFixed(2).replace('.', ',') + ' €' : 'Auf Anfrage');
+            const beschreibung = p.beschreibung || 'Komplettset mit Balkonkraftwerk 800W';
+            const verfuegbarkeit = p.verfuegbarkeit || '✅ Verfügbar';
+            const wechselrichter = p.wechselrichter || 'Growatt NEO 800M-X';
+            const leistung = p.leistung || '800W';
+            const bild = p.bild || 'https://placehold.co/600x400/1a4d2e/white?text=Solar';
+            
+            return `
+                <div class="product-card">
+                    <img class="card-img" src="${bild}" alt="${escapeHtml(titel)}" onerror="this.src='https://placehold.co/600x400/1a4d2e/white?text=Solar'">
+                    <div class="card-content">
+                        <div class="product-title">${escapeHtml(titel)}</div>
+                        <div><span class="leistung">⚡ ${escapeHtml(leistung)}</span></div>
+                        <div class="beschreibung">${escapeHtml(beschreibung)}</div>
+                        <div class="price-row">
+                            <span class="price">${escapeHtml(preisText)}</span>
+                            <span class="wechselrichter">🔌 ${escapeHtml(wechselrichter)}</span>
+                        </div>
+                        <div class="verfuegbarkeit">${escapeHtml(verfuegbarkeit)}</div>
+                        <button class="anfrage-btn" onclick='openAnfrage(${JSON.stringify(p).replace(/'/g, "&#39;")})'>📩 Angebot anfragen</button>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        document.getElementById('productsContainer').innerHTML = html;
+    }
+
     function openAnfrage(produkt) {
         currentProduct = produkt;
-        document.getElementById('modalProdukt').value = produkt.titel + ' - ' + (produkt.preis_text || produkt.preis + ' €');
+        const titel = produkt.titel || produkt.name || 'Balkonkraftwerk';
+        const preisText = produkt.preis_text || (produkt.preis ? produkt.preis.toFixed(2).replace('.', ',') + ' €' : 'Auf Anfrage');
+        
+        document.getElementById('modalProdukt').value = titel + ' - ' + preisText;
         document.getElementById('modalName').value = '';
         document.getElementById('modalEmail').value = '';
         document.getElementById('modalOrt').value = '';
         document.getElementById('optInstallation').checked = false;
         document.getElementById('optHalterung').checked = false;
         
-        let vorschlag = `Ich interessiere mich für das Balkonkraftwerk:\n${produkt.titel}\nPreis: ${produkt.preis_text || produkt.preis + ' €'}\n\n`;
+        let vorschlag = `Ich interessiere mich für das Balkonkraftwerk:\n${titel}\nPreis: ${preisText}\n\n`;
         vorschlag += `Bitte senden Sie mir ein individuelles Angebot.`;
         document.getElementById('modalNachricht').value = vorschlag;
         
@@ -378,7 +387,8 @@
         if (halterung) extras += ', Halterung gewünscht';
         if (extras) nachricht += `\n\nZusatzwünsche:${extras}`;
 
-        const betreff = encodeURIComponent(`Anfrage Balkonkraftwerk: ${currentProduct?.titel || 'Angebot'}`);
+        const titel = currentProduct?.titel || currentProduct?.name || 'Balkonkraftwerk';
+        const betreff = encodeURIComponent(`Anfrage Balkonkraftwerk: ${titel}`);
         const body = encodeURIComponent(
             `Name: ${name}\n` +
             `Email: ${email}\n` +
@@ -386,8 +396,8 @@
             `${nachricht}`
         );
 
-        // Hier deine Email-Adresse eintragen!
-        window.location.href = `mailto:info@energy-leisure.de?subject=${betreff}&body=${body}`;
+        // HIER DEINE EMAIL ADRESSE EINTRAGEN:
+        window.location.href = `mailto:ihre-email@example.com?subject=${betreff}&body=${body}`;
         
         alert('Ihre Anfrage wird per Email geöffnet. Bitte senden Sie sie ab.');
         closeModal();
