@@ -1,42 +1,62 @@
 [
   {
     "id": 1,
-    "titel": "Suntech 440W</span> bifazial full black <span style=\"font-size: 19px;\">(Gesamtleistung 880Wp + bifazial Faktor)</span></span></p> – Balkonkraftwerk 800W",
-    "wechselrichter": "Growatt",
+    "titel": "Suntech 440W bifazial full black – Balkonkraftwerk 800W",
+    "leistung": "880Wp + bifazial Faktor",
+    "wechselrichter": "Growatt NEO 800M-X",
     "preis": 311,
     "preis_text": "311,00 €",
-    "verfuegbarkeit": "✅ Verfügbar"
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Suntech 440W bifazial full black) und Growatt Wechselrichter",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
   },
   {
     "id": 2,
-    "titel": "Aiko 465W </span>bifazial <span style=\"font-size: 19px;\">(Gesamtleistung 930Wp + bifazial Faktor + Teilverschattungsoptimierung)</span></span></p> – Balkonkraftwerk 800W",
-    "wechselrichter": "Growatt",
-    "preis": 323,
-    "preis_text": "323,00 €",
-    "verfuegbarkeit": "✅ Verfügbar"
+    "titel": "Aiko 465W bifazial – Balkonkraftwerk 800W",
+    "leistung": "930Wp + bifazial Faktor + Teilverschattungsoptimierung",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 311,
+    "preis_text": "311,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Aiko 465W bifazial) und Growatt Wechselrichter",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
   },
   {
     "id": 3,
-    "titel": "Trina</span> Solar 450W full black <span style=\"font-size: 19px;\">(Gesamtleistung 900Wp + bifazial Faktor)</span></span></p> – Balkonkraftwerk 800W",
-    "wechselrichter": "Growatt",
-    "preis": 323,
-    "preis_text": "323,00 €",
-    "verfuegbarkeit": "✅ Verfügbar"
+    "titel": "Trina Solar 450W full black – Balkonkraftwerk 800W",
+    "leistung": "900Wp + bifazial Faktor",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 311,
+    "preis_text": "311,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Trina Solar 450W full black) und Growatt Wechselrichter",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
   },
   {
     "id": 4,
-    "titel": "Premium Solarmodulen Aiko 500W bifazial full black (Gesamtleistung 1000Wp + bifazial Faktor + Teilverschattungsoptimierung)</span></p> – Balkonkraftwerk 800W",
-    "wechselrichter": "Growatt",
-    "preis": 383,
-    "preis_text": "383,00 €",
-    "verfuegbarkeit": "✅ Verfügbar"
+    "titel": "Premium Solarmodulen Aiko 500W bifazial full black – Balkonkraftwerk 800W",
+    "leistung": "1000Wp + bifazial Faktor + Teilverschattungsoptimierung",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 311,
+    "preis_text": "311,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Premium Solarmodulen Aiko 500W bifazial full black) und Growatt Wechselrichter",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
   },
   {
     "id": 5,
-    "titel": "Solarmodulen Ja Solar 505W bifazial full black (Gesamtleistung 1010Wp + bifazial Faktor)</span></p> – Balkonkraftwerk 800W",
-    "wechselrichter": "Growatt",
-    "preis": 383,
-    "preis_text": "383,00 €",
-    "verfuegbarkeit": "✅ Verfügbar"
+    "titel": "Ja Solar 505W bifazial full black – Balkonkraftwerk 800W",
+    "leistung": "1010Wp + bifazial Faktor",
+    "wechselrichter": "Growatt NEO 800M-X",
+    "preis": 311,
+    "preis_text": "311,00 €",
+    "beschreibung": "Komplettset mit 2 Solarmodulen (Ja Solar 505W bifazial full black) und Growatt Wechselrichter",
+    "verfuegbarkeit": "✅ Verfügbar",
+    "bild": "https://placehold.co/600x400/1a4d2e/white?text=Solar",
+    "link": "https://pratschke.de/balkonkraftwerke/balkonkraftwerk-800-watt"
   }
 ]
